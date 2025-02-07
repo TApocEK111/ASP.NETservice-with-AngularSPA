@@ -1,0 +1,77 @@
+@main-background-color: rgb(194, 191, 233);
+@device-guid-background-color: rgb(215, 213, 226);
+
+.delete-button {
+    font-size: 0.6rem;
+    padding: 0;
+}
+
+.stats-container {
+    background-color: @main-background-color + 30;
+    margin: 0.4rem;
+    padding: 0.4rem;
+
+    .stats-list {
+        display: flex;
+    }
+}
+
+.device-guid {
+    margin: 0.4rem;
+    background-color: @device-guid-background-color;
+    padding: 0.2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: @device-guid-background-color - 10; 
+    }
+    &:active {
+        background-color: @device-guid-background-color - 20;
+    }
+}
+.records {
+    display: flex;
+    div {
+        margin: 0.5rem;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+
+    background-color: @main-background-color;
+
+    .up-button {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+    }
+}
+
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    body {
+        margin: 0;
+        max-height: 90%;
+    }
+    app-root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+    }
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

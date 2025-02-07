@@ -1,0 +1,46 @@
+<div id="top"></div>
+<main>
+
+    <div *ngIf='showDevicesList'>
+        <div>Устройства: <span *ngIf="devices.length === 0"> не найдены</span></div>
+        <div *ngFor="let device of devices">
+            <div class="device-guid" (click) = 'onDeviceClick(device)'>{{device}}</div>
+        </div>
+    </div>
+    
+    <div class="records-conatiner" *ngIf='!showDevicesList'>
+        <div>
+            <button (click)='onBackButtonClick()'>Назад</button>
+        </div>
+        <div>Статистика:</div>
+        <div class="stats-container">
+            <div>Средняя продолжительность сессии: {{data?.averageSessionDurationMs}} секунд</div>
+            <div>Последнее имя: {{data?.latestName}}</div>
+            <div>Последняя использованная версия: {{data?.latestVersion}}</div>
+            <div class="stats-list">Список использованных имён: <div *ngFor="let name of data?.uniqueNames">| {{name}} |</div></div>
+            <div class="stats-list">Список использованных версий: <div *ngFor="let version of data?.uniqueVersions">| {{version}} |</div></div>
+        </div>
+        <div class="records">
+            <div class="name">
+                <div>Имя</div>
+                <div *ngFor="let record of records">{{record.name}}</div>
+            </div>
+            <div class="time">
+                <div>Начало сессии</div>
+                <div *ngFor="let record of records">{{record.startTime}}</div>
+            </div>
+            <div class="time">
+                <div>Конец сессии</div>
+                <div *ngFor="let record of records">{{record.endTime}}</div>
+            </div>
+            <div class="version">
+                <div>Версия</div>
+                <div *ngFor="let record of records">{{record.version}}  <button class="delete-button" (click)="onDeleteButtonClick(record.deviceId, record.id)">Удалить</button></div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#top">
+        <button class="up-button">Наверх</button>
+    </a>
+</main>
