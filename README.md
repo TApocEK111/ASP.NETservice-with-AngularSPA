@@ -1,4 +1,4 @@
-# ASP.NET + angular 15 example app
+# ASP.NET + angular 15 example app (for educational purpuses)
 Project emulates monitoring service, that can recieve JSON data from external client, store it, and display statistics data with Angular SPA.
 
 ## Technologies used:
